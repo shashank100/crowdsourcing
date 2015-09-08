@@ -1,0 +1,283 @@
+body{
+   background-color:#cdcdcd !important;
+}
+.mini-submenu{
+  display:none;  
+  background-color: rgba(0, 0, 0, 0);  
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  padding: 9px;  
+  /*position: relative;*/
+  width: 42px;
+
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  background-color: #cdcdcd !important;
+  border: 1px solid #cdcdcd !important;
+}
+.mini-submenu:hover{
+  cursor: pointer;
+}
+a.list-group-item {
+  color: black !important;
+}
+.list-group-item {
+  border: 1px solid #cdcdcd !important;
+}
+.mini-submenu .icon-bar {
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
+  margin-top: 3px;
+}
+
+.mini-submenu .icon-bar {
+  background-color: #000;
+}
+
+#slide-submenu{
+  background: rgba(0, 0, 0, 0.45);
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.header {
+  height: 100px;
+  background: #cdcdcd;
+}
+.header-logo {
+  background-image: url("headerlogo.png") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin-top: 5px;
+}
+.sidebar {
+  /*margin-top: 50px;*/
+}
+
+/**/
+.contentDiv{
+  margin-top:20px;
+}
+
+.subheader{
+  padding:10px;
+  font-size:18px;
+  background:#cdcdcd;
+}
+
+.fileupload-buttonbar span, .fileupload-buttonbar button{
+  margin-right:20px;
+}
+
+#notification {
+  color: white;
+  background: black;
+  padding: 1px 7px;
+  border-radius: 10px;
+  position: absolute;
+  left: 84%;
+}
+
+.fa-pencil-square-o {
+  position: relative !important;
+}
+
+
+
+/*by manish*/
+
+
+.adminDashboard .breadcrumb{
+  background: #A9A4A4;
+}
+
+.subheader{
+  padding:10px;
+  font-size:18px;
+  background:#787878;
+  color: #fff;
+}
+
+.subHeader{
+  display: block;
+  /*background: #cdcdcd;*/
+  padding:10px 10px 10px 0px;
+}
+
+.contetnArea{
+  background:#fff;
+  min-height:400px;
+  height: auto;
+  overflow: hidden;
+  padding:15px 15px;
+}
+
+
+.submittedprofiles, .newUsers, .rejectedUsers{
+  border: 1px solid #787878;
+}
+
+.submittedprofiles tr:nth-child(odd),
+ .newUsers tr:nth-child(odd),
+ .rejectedUsers tr:nth-child(odd),{
+  background:#BDB9B9;
+}
+.submittedprofiles tr:nth-child(even),
+ .newUsers tr:nth-child(even),
+ .rejectedUsers tr:nth-child(even){
+  background:#cdcdcd;
+}
+
+
+
+  .newUsers tr th,
+ .newUsers tr td,
+ .submittedprofiles tr th,
+ .submittedprofiles tr td,
+ .rejectedUsers tr th,
+ .rejectedUsers tr td{
+  border-top:none !important;
+}
+
+ .newUsers tr th, .chkStatus table tr th, 
+ .submittedprofiles tr th, .submittedprofiles table tr th,
+ .rejectedUsers tr th, .rejectedUsers table tr th{
+  background: #787878;
+}
+.actionButtons{
+  text-align: right;
+}
+.actionButtons > button{
+  margin-right: 10px;
+  
+}
+
+.seePicsDropdownDiv select, #seeAllPics, #ftpCity, #ftpLocality, .selectRejectDiv select{
+   width:70%;
+  border:none;
+  height: 35px;
+  background:#cdcdcd;
+}
+
+ .selectRejectDiv select{
+  width: 34% !important;
+  height: 30px;
+ }
+ #seeAllPics{
+  background:#fff;
+ }
+
+.modalImg{
+  width:100%;
+  height: 550px;
+  position: relative;
+}
+
+
+.modalImg img{
+  height: 100%;
+  width: 100%;
+}
+
+#myAdminModal .modal-body{
+  /*height: 600px;*/
+  overflow: hidden;
+  background: white;
+
+  
+}
+
+#myAdminModal .modalWrap{
+    /*height:600px;*/
+  overflow-y:scroll;
+  position: relative;
+}
+
+#myAdminModal .modal-lg{
+  width:95%;
+}
+
+#myCarousel{
+  height: 100%;
+  clear: both;
+}
+#myAdminModal .modal-content{
+  position: relative;
+}
+
+#myAdminModal .close{
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  background: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 1;
+}
+
+#iconView{
+  border: 1px solid red;
+  /*height:500px;*/
+  overflow-y:scroll;
+}
+
+#iconView a{
+  display: block;
+  padding:4px 10px;
+}
+
+.selectRejectDiv{
+  position: absolute;
+  bottom: 0px;
+  left:2%;
+  z-index: 10;
+  padding: 5px 10px;
+  color: #fff;
+   box-shadow: inset 0 2px 0 rgba(255,255,255,.3), 0 2px 4px rgba(0,0,0,.4);
+  width: 100%;
+  margin-bottom: 8px;
+  background:rgb(31, 123, 35);
+  opacity: 0.5;
+  border: 1px solid #000;
+  font-weight: bold;
+  color:black;
+}
+
+.mar{
+  margin-top: 5px;
+}
+.carousel-indicators{
+  bottom:40px !important;
+}
+.submitDiv{
+  margin-top:10px;
+  height: auto;
+  overflow: hidden;
+}
+.picsError{
+  color:red;padding:10px 0px 10px 0px;
+}
+
+.mainErrorHandling{
+  display:none;position:absolute;
+  top:50px;
+  right:70px;
+  z-index:1000;width:300px;border:1px solid red !important;
+}
+
+
+.selectedSel, .rejectedRej{
+  display:none;
+}
+
+
+.table>tbody>tr>th, .table>tbody>tr>td {
+  border: none !important;
+}

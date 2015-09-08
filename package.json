@@ -1,0 +1,23 @@
+{
+  "name": "photo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "client-sessions": "*",
+    "express": "*",
+    "formidable": "*",
+    "imagemagick": "*",
+    "jade": "*",
+    "mysql": "*",
+    "node-static": "*",
+    "sendgrid": "*",
+    "winston": "^1.0.0"
+  },
+  "author": "Shashank kaushik and Manish kumar singh",
+  "license": "ISC"
+}

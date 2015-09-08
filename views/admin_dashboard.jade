@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='cache-control', content='max-age=0')
+    meta(http-equiv='cache-control', content='no-cache')
+    meta(http-equiv='expires', content='0')
+    meta(http-equiv='expires', content='Tue, 01 Jan 1980 1:00:00 GMT')
+    meta(http-equiv='pragma', content='no-cache')
+    link(rel='shortcut icon', href='img/cf.ico')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    link(rel='stylesheet', type='text/css', href='css/admin_dashboard.css')
+    link(rel='stylesheet', type='text/css', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css')
+    link(rel='stylesheet', href='css/style.css')
+  body(style='position:relative;')
+    .alert.alert-danger.mainErrorHandling
+       a.close(data-dismiss='alert') &times;
+       .textA
+    .container-fluid.adminDashboard
+      .row
+         .header.col-md-12(style='height:auto;background:#787878;')
+           h1(style='color: white;padding:15px 15px 15px 0px;margin:0px;') ADMIN DASHBOARD
+      .row.breadcrum
+          ul.breadcrumb.col-md-12
+            li home
+            li Dashboard
+      .row
+        .contentDiv
+          .col-sm-4.col-md-3.sidebar
+            .list-group
+              span.list-group-item(style='background:#7B7878;color:#fff;') Hello Admin!!!
+              a#newProfiles.list-group-item(href='#', onclick='newProfiles()')
+                i.fa.fa-pencil-square-o
+                |  See New Profiles
+                span.badge 0
+              a#approvedUsers.list-group-item(href='#', onclick='workSubmitted()')
+                i.fa.fa-user-plus
+                |  Approved Users
+                span.badge 0
+              a#approveLocality.list-group-item(href='#', onclick='approveLocality()')
+                i.fa.fa-check-square-o
+                |  Approve Locality
+                span.badge 0
+              a#approveLocality.list-group-item(href='#', onclick='sendToFTP()')
+                i.fa.fa-paper-plane
+                |  Send to FTP
+              a#insertLocality.list-group-item(href='#', onclick='addLocality()')
+                i.fa.fa-cart-plus
+                |  Add Locality To Shoot
+              a.list-group-item(href='/logout')
+                i.fa.fa-power-off
+                |  Logout
+          .col-sm-8.col-md-9     
+           #data
+            .subheader Hello Admin!!! welcome to your dashboard section
+            .contetnArea
+     #myAdminModal.modal.fade
+      .modal-dialog.modal-lg
+        .modal-content
+             button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') X
+          .modal-body
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/admin_dashboard.js')

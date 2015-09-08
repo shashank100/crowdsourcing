@@ -1,0 +1,9 @@
+should changes be reverted in case of error??
+make see selected and rejected images functionality;
+ask if any other functionality is required;
+show message if file has been moved or an error occured;
+
+done--->
+added a new column city to locality_image;
+changed getwork to incorporate city and locality
+made select reject functionality;

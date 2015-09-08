@@ -1,0 +1,216 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='cache-control', content='max-age=0')
+    meta(http-equiv='cache-control', content='no-cache')
+    meta(http-equiv='expires', content='0')
+    meta(http-equiv='expires', content='Tue, 01 Jan 1980 1:00:00 GMT')
+    meta(http-equiv='pragma', content='no-cache')
+    script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=geometry')
+    link(rel='shortcut icon', href='img/cf.ico')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    link(rel='stylesheet', type='text/css', href='css/agency.css')
+    link(rel='stylesheet', type='text/css', href='css/user_dashboard.css')
+    link(rel='stylesheet', type='text/css', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.15.2/css/blueimp-gallery.min.css')
+    link(rel='stylesheet', href='css/jquery.fileupload.css')
+    link(rel='stylesheet', href='css/jquery.fileupload-ui.css')
+    link(rel='stylesheet', href='https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css')
+
+    noscript
+      link(rel='stylesheet', href='css/jquery.fileupload-noscript.css')
+    noscript
+      link(rel='stylesheet', href='css/jquery.fileupload-ui-noscript.css')
+  body(style='position:relative;')
+    .alert.alert-danger.mainErrorHandling
+       a.close(data-dismiss='alert') &times;
+       .textA
+    .container-fluid.userDashboard
+      .row
+        .header.col-md-12(style='height:auto;background:#787878;')
+           h1(style='color: white;padding:15px 15px 15px 0px;margin:0px;') USER DASHBOARD
+          //.col-md-4.logoutDIv
+            a(href='/logout')
+              i.fa.fa-power-off
+              |  Logout
+      .row.breadcrum
+          ul.breadcrumb.col-md-12
+            li home
+            li Dashboard
+      .row
+        .contentDiv
+          .col-sm-4.col-md-3.sidebar
+            .list-group
+              span.sidebarHead.list-group-item.active Hello User!!!
+
+              button.list-group-item#disable(onclick='changePassword()')
+                i.fa.fa-pencil-square-o
+                |  Change Password
+              button.list-group-item#disable(onclick='selectCity()')
+                i.fa.fa-camera
+                |  Select locality to shoot
+              button.list-group-item#disable(onclick='uploadImages()')
+                i.fa.fa-folder-open
+                |  Submit work
+              button.list-group-item#disable(onclick='needHelp()')
+                i.fa.fa-question
+                |  Need help!! Talk to us.
+              button.list-group-item#disable(onclick='callAjaxLocDetails("chkClick")')
+                i.fa.fa-check-square
+                |  Check status of approval
+              //button.list-group-item#disable(onclick='cancelChange()')
+                i.fa.fa-times
+                |  Cancel Change Request   
+              button.list-group-item#disable(onclick='logout()')
+                i.fa.fa-power-off
+                |  Logout
+          .col-sm-8.col-md-9
+            #data-1
+              .subheader Hello User!!! welcome to your dashboard section
+            #data
+              .subheader Submit Your Photos of Selected Locality
+              // The file upload form used as target for the file upload widget
+              #localityCategoryDiv
+              form#fileupload(method='POST', enctype='multipart/form-data')
+                // Redirect browsers with JavaScript disabled to the origin page
+                noscript
+                  input(type='hidden', name='redirect', value='https://blueimp.github.io/jQuery-File-Upload/')
+                // The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload
+                .row.fileupload-buttonbar
+                  .col-sm-7.col-md-12
+                    // The fileinput-button span is used to style the file input field as button
+                    span.btn.btn-success.fileinput-button
+                      i.glyphicon.glyphicon-plus
+                      span Add files...
+                      input(type='file', id='file',name='files[]', multiple='')
+                    button.btn.btn-primary.start(type='submit')
+                      i.glyphicon.glyphicon-upload
+                      span Start upload
+                    button.btn.btn-warning.cancel(type='reset')
+                      i.glyphicon.glyphicon-ban-circle
+                      span Cancel upload
+                    button.btn.btn-danger.delete(type='button')
+                      i.glyphicon.glyphicon-trash
+                      span Delete
+                    input.toggle(type='checkbox')
+                    // The global file processing state
+                    span.fileupload-process
+                  // The global progress state
+                  .col-sm-5.col-md-5.fileupload-progress.fade
+                    // The global progress bar
+                    .progress.progress-striped.active(role='progressbar', aria-valuemin='0', aria-valuemax='100')
+                      .progress-bar.progress-bar-success(style='width:0%;')
+                    // The extended global progress state
+                    .progress-extended  
+                // The table listing the files available for upload/download
+                table.table.table-striped(role='presentation', id='file-upload' )
+                  tbody.files
+    // The template to display files available for upload
+    script#template-upload(type='text/x-tmpl').
+      {% for (var i=0, file; file=o.files[i]; i++) { %}
+      <tr class="template-upload fade">
+      <td>
+      <span class="preview"></span>
+      </td>
+      <td>
+      <p class="name">{%=file.name%}</p>
+      <strong class="error text-danger"></strong>
+      </td>
+      <td>
+      <p class="size">Processing...</p>
+      <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+      </td>
+      <td>
+      {% if (!i && !o.options.autoUpload) { %}
+      <button class="btn btn-primary start" disabled>
+      <i class="glyphicon glyphicon-upload"></i>
+      <span>Start</span>
+      </button>
+      {% } %}
+      {% if (!i) { %}
+      <button class="btn btn-warning cancel">
+      <i class="glyphicon glyphicon-ban-circle"></i>
+      <span>Cancel</span>
+      </button>
+      {% } %}
+      </td>
+      </tr>
+      {% } %}
+    // The template to display files available for download
+    script#template-download(type='text/x-tmpl').
+      {% for (var i=0, file; file=o.files[i]; i++) { %}
+      <tr class="template-download fade">
+      <td>
+      <span class="preview">
+      {% if (file.thumbnailUrl) { %}
+      <p  title="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></p>
+      {% } %}
+      </span>
+      </td>
+      <td>
+      <p class="name">
+      {% if (file.url) { %}
+      <p title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</p>
+      {% } else { %}
+      <span>{%=file.name%}</span>
+      {% } %}
+      </p>
+      {% if (file.error) { %}
+      <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+      {% } %}
+      </td>
+      <td>
+      <span class="size">{%=o.formatFileSize(file.size)%}</span>
+      </td>
+      <td>
+      {% if (file.deleteUrl) { %}
+      <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+      <i class="glyphicon glyphicon-trash"></i>
+      <span>Delete</span>
+      </button>
+      <input type="checkbox" name="delete" value="1" class="toggle">
+      {% } else { %}
+      <button class="btn btn-warning cancel">
+      <i class="glyphicon glyphicon-ban-circle"></i>
+      <span>Cancel</span>
+      </button>
+      {% } %}
+      </td>
+      </tr>
+      {% } %}
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    // The jQuery UI widget factory, can be omitted if jQuery UI is already included
+    script(src='js/vendor/jquery.ui.widget.js')
+    // The Templates plugin is included to render the upload/download listings
+    script(src='js/tmpl.min.js')
+    // The Load Image plugin is included for the preview images and image resizing functionality
+    script(src='js/load-image.all.min.js')
+    // The Canvas to Blob plugin is included for image resizing functionality
+    script(src='js/canvas-to-blob.min.js')
+    // Bootstrap JS is not required, but included for the responsive demo navigation
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    // blueimp Gallery script
+    script(src='js/jquery.blueimp-gallery.min.js')
+    // The Iframe Transport is required for browsers without support for XHR file uploads
+    script(src='js/jquery.iframe-transport.js')
+    // The basic File Upload plugin
+    script(src='js/jquery.fileupload.js')
+    // The File Upload processing plugin
+    script(src='js/jquery.fileupload-process.js')
+    // The File Upload image preview & resize plugin
+    script(src='js/jquery.fileupload-image.js')
+    // The File Upload validation plugin
+    script(src='js/jquery.fileupload-validate.js')
+    // The File Upload user interface plugin
+    script(src='js/jquery.fileupload-ui.js')
+    // The main application script
+    script(src='js/main.js')
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.js')
+    // The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9
+    //if (gte IE 8)&(lt IE 10)
+    script(src='js/cors/jquery.xdr-transport.js')
+    script(src='js/jquery.exif.js')
+    script(src='js/user_dashboard.js')

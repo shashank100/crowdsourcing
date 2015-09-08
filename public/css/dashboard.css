@@ -1,0 +1,88 @@
+.mini-submenu{
+  display:none;  
+  background-color: rgba(0, 0, 0, 0);  
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  padding: 9px;  
+  /*position: relative;*/
+  width: 42px;
+
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  background-color: #cdcdcd !important;
+  border: 1px solid #cdcdcd !important;
+}
+.mini-submenu:hover{
+  cursor: pointer;
+}
+a.list-group-item {
+  color: black !important;
+}
+.list-group-item {
+  border: 1px solid #cdcdcd !important;
+}
+.mini-submenu .icon-bar {
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
+  margin-top: 3px;
+}
+
+.mini-submenu .icon-bar {
+  background-color: #000;
+}
+
+#slide-submenu{
+  background: rgba(0, 0, 0, 0.45);
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.header {
+  height: 100px;
+  background: #000;
+}
+.header-logo {
+  background-image: url("headerlogo.png") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin-top: 5px;
+}
+.sidebar {
+  /*margin-top: 50px;*/
+}
+
+/**/
+.contentDiv{
+  margin-top:130px;
+}
+
+.subheader{
+  padding:10px;
+  font-size:18px;
+  background:#cdcdcd;
+}
+
+.fileupload-buttonbar{
+  padding:15px 15px;
+}
+
+.fileupload-buttonbar span, .fileupload-buttonbar button{
+  margin-right:20px;
+}
+
+.logoutDIv a{
+  float: right;
+  font-size: 20px;
+  margin-top: 32px;
+  color: white;
+}
+
+.logoutDIv a:hover{
+  color:#fed136;
+  text-decoration: none;
+}

@@ -1,0 +1,222 @@
+body{
+  background-color:#cdcdcd !important;
+}
+
+.mini-submenu{
+  display:none;  
+  background-color: rgba(0, 0, 0, 0);  
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  padding: 9px;  
+  /*position: relative;*/
+  width: 42px;
+
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  /*background-color: #cdcdcd !important;*/
+  background-color: #7B7878 !important;
+  border: 1px solid #cdcdcd !important;
+  text-align: left;
+}
+.mini-submenu:hover{
+  cursor: pointer;
+}
+a.list-group-item {
+  color: black !important;
+}
+.list-group-item {
+  border: 1px solid #cdcdcd !important;
+  text-align: left;
+}
+.mini-submenu .icon-bar {
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
+  margin-top: 3px;
+}
+
+.mini-submenu .icon-bar {
+  background-color: #000;
+}
+
+#slide-submenu{
+  background: rgba(0, 0, 0, 0.45);
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.header {
+  height: 100px;
+  background: #cdcdcd;
+}
+.header-logo {
+  background-image: url("headerlogo.png") !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin-top: 5px;
+}
+.sidebar {
+  /*margin-top: 50px;*/
+}
+
+/**/
+/**/
+.contentDiv{
+  /*margin-top:20px;*/
+}
+
+.subheader{
+  padding:10px;
+  font-size:18px;
+  background:#787878;
+  color: #fff;
+}
+
+.fileupload-buttonbar{
+  padding:15px 15px;
+}
+
+.fileupload-buttonbar span, .fileupload-buttonbar button{
+  margin-right:20px;
+}
+
+.logoutDIv a{
+  float: right;
+  font-size: 20px;
+  margin-top: 32px;
+  color: white;
+}
+
+.logoutDIv a:hover{
+  color:#fed136;
+  text-decoration: none;
+}
+
+#data {
+  display: none;
+  min-height: 400px;
+  height: auto;
+  background: #fff;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.userDashboard .row, .userDashboard .header{
+  /*position:fixed;z-index:100;width: 100%;*/
+}
+
+.sidebarHead{
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 0px !important;
+}
+
+.userDashboard .breadcrumb{
+  background: #A9A4A4;
+}
+
+.selLocContent, .editProfileContent, .chkStatus, .needHelp{
+  background:#fff;
+    min-height: 400px;
+  height: auto;
+  overflow: hidden;
+  padding:15px 15px;
+}
+
+.editProfileContent h4{
+  text-transform: none;
+}
+
+
+
+.selLocContent input[type='text']{
+  width:70%;
+  height:30px;
+}
+
+.selLocContent select, #localityCategoryDiv select{
+  width:70%;
+  border:none;
+  height: 35px;
+}
+
+.selLocContent .selLocTable tr td:first-child{
+  text-align: right;
+  font-weight: bold;
+  width:130px;
+}
+
+
+.selLocContent .selLocTable>tbody>tr>td, 
+.selLocContent .selLocTable>tbody>tr>th, 
+.selLocContent .selLocTable>tfoot>tr>td, 
+.selLocContent .selLocTable>tfoot>tr>th, 
+.selLocContent .selLocTable>thead>tr>td, 
+.selLocContent .selLocTable>thead>tr>th{
+  border-top:none !important;
+}
+
+.selLocContent .showLocTable tr th, .chkStatus table tr th{
+  background: #787878;
+}
+
+.showLocTable{
+  border: 1px solid #787878;
+}
+.showLocTable tr:nth-child(odd){
+  background:#BDB9B9;
+}
+.showLocTable tr:nth-child(even){
+  background:#cdcdcd;
+}
+
+
+
+.chkStatus .subheader, .locSelectionDetail .subheader{
+  background:none !important;
+  color: #000;
+  margin-bottom:0px !important; 
+  padding-left: 0px
+}
+
+#file-upload{
+  width: 95%;
+  margin:0  auto;
+  border: 1px solid #cdcdcd;
+}
+
+#localityCategoryDiv{
+  padding:20px 0px;
+  height: auto;
+  overflow: hidden;
+}
+
+.changePwdTbl{
+  width: 50% !important;
+  margin-top: 30px !important;
+  /*border: 1px solid #cdcdcd;*/
+}
+
+ .changePwdTbl tr th,
+ .changePwdTbl tr td{
+  border-top:none !important;
+}
+
+.mainErrorHandling{
+  display:none;position:absolute;
+  top:50px;
+  right:70px;
+  z-index:1000;
+  width:300px;
+  border:1px solid red !important;
+}
+#disable {
+  width:100%;
+}
+button#disable:hover {
+  background-color: #ddd;
+}
